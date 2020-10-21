@@ -1,48 +1,70 @@
+class ListNode:
+    def __init__(self, x):
+        self.value = x
+        self.next = None 
 
-# Given a singly linked list of integers, determine whether or not it's a palindrome.
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.size = 0
 
-# Example
+    def insert(self, value):
+        node = ListNode(value)
+        
+        if self.head is None:
+            self.head = node
+        else:
+            current_node = self.head
+            while current_node.next:
+                current_node = current_node.next
 
-# For l = [0, 1, 0], the output should be
-# isListPalindrome(l) = true;
+            current_node.next = node
+        self.size += 1
 
-# For l = [1, 2, 2, 3], the output should be
-# isListPalindrome(l) = false.
 
-# Singly-linked lists are already defined with this interface:
-# class ListNode(object):
-#   def __init__(self, x):
-#     self.value = x
-#     self.next = None
-#
-
+    def traverse(self):
+        node = self.head
+        while node:
+            print(node.value)
+            node = node.next
+            
 def reverseList(node):
     prev = None
     while(node):
         nxt = node.next
         node.next = prev
-        prev = node
+        prev = node 
         node = nxt
     return prev
-    
-def isListPalindrome(l):
-    if l is None:
+
+class Solution:
+    def is_palindrome(self, head: ListNode) -> bool:
+        if head is None or head.next is None:
+            return True
+        slow, fast = head, head
+        while(slow and fast and fast.next):
+            fast = fast.next.next
+            slow = slow.next
+        first = head
+        second = reverseList(slow)
+        while(second):
+            if first.value != second.value:
+                return False
+            first = first.next
+            second = second.next
         return True
-    
-    # find the middle of the list using two pointers
-    slow, fast = l, l
-    while slow and fast and fast.next:
-        fast = fast.next.next
-        slow = slow.next
-        
-    left = l
-    right = reverseList(slow)
-    
-    #compare both lists
-    while right:
-        if left.value != right.value:
-            return False
-        left = left.next
-        right = right.next
-    
-    return True
+
+
+test_case = [1,2,3,3,2,1]
+
+linked_list = LinkedList()
+
+for n in test_case:
+    linked_list.insert(n)
+
+solution = Solution()
+
+answer = solution.is_palindrome(linked_list.head)
+
+print(answer)
+
