@@ -19,38 +19,16 @@ def nextLargerSlow(a):
 
 # using stack O(n)
 
-class Stack():
-    def __init__(self):
-        self.size = 0
-        self.items = []
-
-    def push(self, value):
-        self.items.append(value)
-        self.size += 1
-
-    def pop(self):
-        if self.size > 0:
-            item = self.items.pop()
-            self.size -= 1
-            return item
-        return None
-
-    def peek(self):
-        if self.size > 0:
-            return self.items[self.size - 1]
-        return None
-
-
-def nextLargerFast(a):
+def nextLarger(a):
     n = len(a)
     ans = [-1 for _ in range(n)]
-    stack = Stack()
-    stack.push(0)
+    stack = []
+    stack.append(0)
 
     for i in range(1, n):
-        while stack.size > 0 and a[stack.peek()] < a[i]:
-            ans[stack.peek()] = a[i]
+        while stack and a[stack[-1]] < a[i]:
+            ans[stack[-1]] = a[i]
             stack.pop()
-        stack.push(i)
+        stack.append(i)
     
     return ans
