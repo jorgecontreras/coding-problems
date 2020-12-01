@@ -26,4 +26,4 @@ def hasDeadlock(connections):
         if search(next_pos): 
             return True
 
-    return(False)
+    return False
