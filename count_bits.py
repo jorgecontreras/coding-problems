@@ -1,4 +1,4 @@
-# count bits
+# count bits (Hamming weight)
 
 def count_bits(n):
     c = 0
