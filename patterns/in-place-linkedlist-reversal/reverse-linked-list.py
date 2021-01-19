@@ -17,14 +17,10 @@ class Node:
 
 
 def reverse(head):
-  # TODO: Write your code here
   prev = None 
 
   while head:
-      nxt = head.next
-      head.next = prev 
-      prev = head
-      head = nxt
+      head, head.next, prev = head.next, prev, head 
 
   return prev
 
