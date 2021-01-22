@@ -11,23 +11,15 @@
 # ['apt', 'pat'],
 # ['now']]
 
+# Intuition: Two strings are anagrams if and only if their sorted strings are equal.
+
+from collections import defaultdict
+
 def group_anagrams(words):
-    values = dict()
-
+    ans = defaultdict(list)
     for word in words:
-        value = 0
-        for c in word:
-            value += ord(c)
-        if value in values:
-            values[value] = values[value] + [word]
-        else:
-            values[value] = [word]
+        ans[tuple(sorted(word))].append(word)
+    
+    return ans.values()
 
-    result = []
-
-    for v, item in values.items():
-        result.append(item)
-
-    return result
-
-print(group_anagrams(['eat', 'ate', 'apt', 'pat', 'tea', 'now']))
+print(group_anagrams(["cab","tin","pew","duh","may","ill","buy","bar","max","doc"]))
