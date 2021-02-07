@@ -15,15 +15,22 @@ A transformation sequence from word beginWord to word endWord using a dictionary
 ```
 beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
 ```
-*Output:* 5
-
+*Output:* 
+```
+5
+```
 *Explanation:* One shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog" with 5 words.
 
 **Example 2:**
+
+*Input:* 
 ```
-*Input:* beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
+beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
 ```
-*Output:* 0
+*Output:* 
+```
+0
+```
 
 *Explanation:* The endWord "cog" is not in wordList, therefore there is no possible transformation.
  
