@@ -1,21 +1,21 @@
-# trapping rain water ( BRUTE FORCE SOLUTION )
-
-# Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
-
-# Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
-# Output: 6
-
+# TRAPPING RAIN WATER 
+# 
+# Brute Force
+# 
+# Time complexity: O(N^2)
+# Space complexity: O(1) 
+#
 #        #
 #    #   ## #
 # _#_##_######
 # 001012100100
 #
+# Intuition:
+#
 # 1. for each array element, find next equal or larger number to the right and to the left. 
 # 2. get the min of the two (if found) and substract height of current element.
 # 3. sum all the units
-
-# Input: height = [4,2,0,3,2,5]
-# Output: 9
+#
 #
 #      x
 # x    x
@@ -44,22 +44,16 @@ def calculate_water_volume(elevation_map):
             if rh < elevation_map[r] > e:
                 rh = elevation_map[r]
 
-        # will hold at most highest of the two minus the height of itself
-        highest = min(lh, rh)
-        if highest > 0:
-            units = highest - e 
-        else:
-            units = 0
-
-        volume += units
+        # will hold at most lowest of the two minus the height of itself
+        lowest = min(lh, rh)
+        volume += max(lowest - e, 0)
             
     return volume
-
-
-
 
 elevation_map_1 = [0,1,0,2,1,0,1,3,2,1,2,1]
 elevation_map_2 = [4,2,0,3,2,5]
 
 assert calculate_water_volume(elevation_map_1) == 6
 assert calculate_water_volume(elevation_map_2) == 9
+
+print("all tests passed.")
