@@ -2,7 +2,7 @@
 
 There are a total of n courses you have to take labelled from `0` to `n - 1`.
 
-Some courses may have `prerequisites`, for example, if `prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]` this means you must take the course `bi` before the course `ai`.
+Some courses may have `prerequisites`, for example, if `prerequisites[i] = [ai, bi]` this means you must take the course `bi` before the course `ai`.
 
 Given the total number of courses `numCourses` and a list of the `prerequisite` pairs, return the ordering of courses you should take to finish all courses.
 
