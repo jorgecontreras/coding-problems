@@ -1,8 +1,12 @@
 # ALL PATHS FOR A SUM
+# 
+# Given a binary tree and a number ‘S’, find all paths from root-to-leaf such that the sum of all the node values of each path equals ‘S’.
 #
 # Depth First Search
-
-# Given a binary tree and a number ‘S’, find all paths from root-to-leaf such that the sum of all the node values of each path equals ‘S’.
+# 
+# Time complexity: O(NlogN)
+# Space complecity: O(N)
+#
 
 class Node:
     def __init__(self, val):

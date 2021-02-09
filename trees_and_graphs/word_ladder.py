@@ -1,24 +1,40 @@
 # Word Ladder
+# 
+# Breadth First Seach
+#
+# Time complexity: O(M^2 x N) N number of words. M length of word
+# Space complexity: O(M^2 x N) 
+#
 
-from collections import deque
+from collections import deque, defaultdict
 
 class WordLadder:
 
-    def is_close(self, w1, w2):
-        for i in range(self.wl):
-            #if a char is different
-            if w1[i] != w2[i]:
-                # check the rest of the string, should be equal
-                return w1[i+1:] == w2[i+1:]
+    # preprocess will get the close words in advance, 
+    # to speed up the lookup step
+    def preprocess(self):
+        
+        self.word_list_generic = defaultdict(list)
+
+        for word in self.word_list:
+            chars = list(word)
+            for i in range(self.wl):
+                char = chars[i]
+                chars[i] = "*"
+                self.word_list_generic["".join(chars)].append(word)
+                chars[i] = char
 
     def find_close_words(self, word):
 
-        close_words = set()
-        
-        for w in self.word_list:
-            if self.is_close(w, word):
-                if w not in self.visited:
-                    close_words.add(w)
+        close_words = []
+        chars = list(word)
+        for i in range(self.wl):
+            char = chars[i]
+            chars[i] = "*"
+            generic = "".join(chars)
+            chars[i] = char
+            if generic in self.word_list_generic:
+                close_words += [w for w in self.word_list_generic[generic] if w not in self.visited]
         
         return close_words
 
@@ -36,6 +52,9 @@ class WordLadder:
         # if target word is not in word list, stop here
         if end_word not in self.word_list:
             return 0
+
+        # preprocess words
+        self.preprocess()
         
         # depth level will help us determine distance
         self.level = 1

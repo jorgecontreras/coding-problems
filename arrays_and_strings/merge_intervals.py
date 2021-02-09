@@ -1,52 +1,59 @@
-# Merge intervals
+# MERGE INTERVALS
+#
+# Time complexity: O(NlogN) - traverse all elements (N) and the initial sorting (logN)
+# Space complexity: O(N) - the merged output will require N space
+# 
+# Given a list of intervals, merge all the overlapping intervals to produce a list that has onlu mutually exclusive intervals.
 
-def merge_intervals(intervals):
+from __future__ import print_function
 
-    if len(intervals) < 2:
-        return intervals
 
-    # sort intervals by start
-    intervals.sort(key= lambda x: x[0])
+class Interval:
+  def __init__(self, start, end):
+    self.start = start
+    self.end = end
 
-    merged = []
+  def print_interval(self):
+    print("[" + str(self.start) + ", " + str(self.end) + "]", end='')
 
-    # get start and end of First interval
-    start = intervals[0][0]
-    end = intervals[0][1]
 
-    for i in range(1, len(intervals)):
-        if intervals[i][0] <= end: #overlap
-            #adjust the end of the interval
-            end = max(intervals[i][1], end)
-        else: # no overlap
-            # append new interval
-            merged.append([start, end])
+def merge(intervals):
+  
+  if len(intervals) < 2:
+    return intervals
+  
+  # sort by start
+  intervals.sort(key=lambda x: x.start)
 
-            # get start and end of Current Interval
-            start = intervals[i][0]
-            end = intervals[i][1]
+  merged = []
+  start = intervals[0].start
+  end = intervals[0].end
 
-    merged.append([start, end])
-    return merged
+  for i in range(1, len(intervals)):
+      if intervals[i].start <= end:
+          end = max(intervals[i].end, end)
+      else:
+          merged.append(Interval(start, end))
+          start = intervals[i].start
+          end = intervals[i].end
 
-t1 = [
-    [1,4],
-    [2,5],
-    [7,9]
-]
+  merged.append(Interval(start, end))
+  return merged
 
-t2 = [
-    [6,7],
-    [2,4],
-    [5,9]
-]
+def main():
+  print("Merged intervals: ", end='')
+  for i in merge([Interval(1, 4), Interval(2, 5), Interval(7, 9)]):
+    i.print_interval()
+  print()
 
-t3 = [
-    [1,4],
-    [2,6],
-    [3,5]
-]
+  print("Merged intervals: ", end='')
+  for i in merge([Interval(6, 7), Interval(2, 4), Interval(5, 9)]):
+    i.print_interval()
+  print()
 
-print(merge_intervals(t1))
-print(merge_intervals(t2))
-print(merge_intervals(t3))
+  print("Merged intervals: ", end='')
+  for i in merge([Interval(1, 4), Interval(2, 6), Interval(3, 5)]):
+    i.print_interval()
+  print()
+
+main()
