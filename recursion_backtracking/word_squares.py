@@ -9,7 +9,8 @@ from collections import defaultdict
 # How it works:
 #
 # The main idea of the algorithm is to try one word at a time, and continue placing new rows as long as the constraints are met.
-# When a word breaks the requirement, the program backtracks and starts with a new word.
+# When a word breaks the requirement, the program backtracks to try other possibilities or starts with a new word if no more 
+# options are avilable to try on the given path.
 # If the square is completed, the result is added to the answer.
 
 # Trie Node
