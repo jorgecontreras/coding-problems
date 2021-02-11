@@ -22,7 +22,7 @@ class TrieNode:
     def insert(self, char):
         self.children[char] = TrieNode()
 
-    # find all the complete words that are found under the node
+    # find all the complete words that are stored under the node
     def suffixes(self, suffix='', collected=[]):
         for char, node in self.children.items():
             if node.is_word:
