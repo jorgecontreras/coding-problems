@@ -1,5 +1,29 @@
 # FRUITS INTO BASKETS
-# sliding window solution
+#
+# Problem Statement:
+#
+# Given an array of characters where each character represents a fruit tree, you are given two baskets, 
+# and your goal is to put maximum number of fruits in each basket. 
+# The only restriction is that each basket can have only one type of fruit.
+# You can start with any tree, but you can’t skip a tree once you have started. 
+# You will pick one fruit from each tree until you cannot, i.e., you will stop when you have to pick from a third fruit type.
+# Write a function to return the maximum number of fruits in both the baskets.
+#
+# Intuition:
+# In other words, we are looking for the longest subarray with at most two distinct elements
+#
+# This problem can be solved using the sliding window pattern.
+#
+# Algorithm:
+# Open the window
+# Start storing the "fruits" into a dictionary.
+# Keep moving forward until dictionary length goes over 2, which means we have reached more that 2 type of fruits.
+# start closing the window, decreasing and eventually removing one element of the dictionary.
+# Store the size of the subarray we reached at that point
+# Continue with remaining elements
+#
+# Time complexity: O(N), we need to traverse all elements once.
+# Space complexity: O(1), there will be at most 3 types of fruits stored at a time.
 
 def solve(fruits):
 
