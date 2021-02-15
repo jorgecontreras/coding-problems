@@ -1,13 +1,5 @@
-# fruits into baskets
-
-# longest subarray with at most two distinct elements
-
-# open the window
-# keep moving forward until dict length goes over 2
-    # start closing the window until dict is again 2 or less
-    # dont forget to store the size we reached at that point
-# continue with remaining elements
-
+# FRUITS INTO BASKETS
+# sliding window solution
 
 def solve(fruits):
 
