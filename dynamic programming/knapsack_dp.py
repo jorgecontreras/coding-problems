@@ -1,3 +1,12 @@
+# Knapsack
+#
+# dynamic programming - max profit only
+#
+# This solution returns the max profit possible withtout specifying which elements were selected.
+#
+# Time complexity: O(N * C), where N is the number of items and C is the maximum capacity of the knapsack
+# Space complexity: O(N * C), space for the memoization array.
+
 def solve_knapsack(profits, weights, capacity):
     #initialize cache
     dp = [[-1 for x in range(capacity + 1)] for y in range(len(profits))]

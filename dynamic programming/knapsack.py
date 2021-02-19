@@ -1,3 +1,10 @@
+# Knapsack 
+#
+# Recursion
+#
+# Time complexity: 2^n, where n is the number of items
+# Space complexity: O(n). space to store the recursion stack
+
 def solve_knapsack(profits, weights, capacity):
     return knapsack(profits, weights, capacity, 0)
 
