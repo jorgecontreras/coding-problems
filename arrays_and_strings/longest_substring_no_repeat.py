@@ -1,5 +1,7 @@
 # Given a string s, find the length of the longest substring without repeating characters.
 #
+# Sliding window
+#
 # Time complexity: O(N)
 # Space complexity: O(N)
 
