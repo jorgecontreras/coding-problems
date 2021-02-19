@@ -3,11 +3,7 @@ class Node:
     self.data = x
     self.next = None
 
-# Add any helper functions you may need here
-
-
 def reverse(head):
-  # Write your code here
   prev, start, end = None, None, None
       
   while head:
@@ -40,8 +36,7 @@ def reverse(head):
     head = head.next
 
 
-# These are the tests we use to determine if the solution is correct.
-# You can add your own at the bottom, but they are otherwise not editable!
+# Tests
 
 def printLinkedList(head):
   print('[', end='')
