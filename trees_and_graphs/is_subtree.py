@@ -33,6 +33,9 @@ Given tree t:
 Return false.
 """
 
+# Time complexity: O(m*n)
+# Space complexity: O(n), for the depth of the recursion 
+
 class Solution:
 
     def isSubtree(self, s, t):
@@ -47,9 +50,7 @@ class Solution:
         return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
 
     def isEqual(self, p, q):
-        if not p and not q:
-            return True
-        
         if p and q:
             return p.val == q.val and self.isEqual(p.left, q.left) and self.isEqual(p.right, q.right)
         
+        return p is q
