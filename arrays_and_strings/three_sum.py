@@ -31,7 +31,7 @@ def threeSum(nums):
             continue # skip dups
         
         dups.add(n1)
-        for j,n2 in enumerate(nums[i+1:]): 
+        for n2 in nums[i+1:]: 
             complement = -n1 -n2
             if complement in seen and seen[complement] == i:
                 triplets.add(tuple(sorted([n1, n2, complement])))
