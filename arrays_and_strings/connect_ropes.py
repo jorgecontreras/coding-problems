@@ -18,6 +18,10 @@ Input: [1, 3, 11, 5, 2]
 Output: 42
 Explanation: First connect 1+2(=3), then 3+3(=6), 6+5(=11), 11+11(=22). Total cost is 42 (3+6+11+22)
 """
+#
+# Time complexity: O(NlogN)
+# Space complexity: O(N)
+#
 
 from heapq import *
 
