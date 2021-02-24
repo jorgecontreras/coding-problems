@@ -19,9 +19,8 @@ def traverse(node):
         levelSize = len(queue)
         total = 0
 
-        while levelSize > 0:
+        for i in range(levelSize):
             node = queue.popleft()
-            levelSize -= 1
             total += node.val
 
             if node.left:
@@ -35,3 +34,14 @@ def traverse(node):
 
     return results
 
+n = Node(5) # 5
+
+n.left = Node(3) #3.5
+n.right = Node(4)
+
+n.left.left = Node(4) #7
+n.left.right = Node(6)
+n.right.left = Node(8)
+n.right.right = Node(10)
+
+print(traverse(n))
