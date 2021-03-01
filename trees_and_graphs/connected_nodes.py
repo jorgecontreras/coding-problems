@@ -32,10 +32,6 @@ def find_connected(edges):
 
     return components
             
-
-
-
-
 edges = [
     [1,0],
     [1,8],
@@ -46,9 +42,5 @@ edges = [
 ]
 
 groups = find_connected(edges)
-
-
-[1,0,8]
-[4,5,2,6]
 
 print(groups)
