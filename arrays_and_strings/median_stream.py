@@ -31,20 +31,6 @@ def findMedian(arr):
   return output
 
 # Tests
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-def printInteger(n):
-  print('[', n, ']', sep='', end='')
-
 def printIntegerList(array):
   size = len(array)
   print('[', end='')
@@ -65,12 +51,12 @@ def check(expected, output):
     result = False
   for i in range(min(expected_size, output_size)):
     result &= (output[i] == expected[i])
-  rightTick = '\u2713'
-  wrongTick = '\u2717'
+  rightTick = '\033[92m' + '\u2713' + '\033[0m'
+  wrongTick = '\033[91m' + '\u2717' + '\033[0m'
   if result:
-    print(bcolors.OKGREEN + rightTick + bcolors.ENDC , ' Test #' ,test_case_number, sep='')
+    print(rightTick, ' Test #' ,test_case_number, sep='')
   else:
-    print(bcolors.FAIL + wrongTick + bcolors.ENDC, 'Test #', test_case_number, ': Expected ', sep='', end='')
+    print(wrongTick, ' Test #', test_case_number, ': Expected ', sep='', end='')
     printIntegerList(expected)
     print(' Your output: ', end='')
     printIntegerList(output)
