@@ -1,9 +1,5 @@
 import math
-# Add any extra import statements you may need here
 from heapq import *
-
-# Add any helper functions you may need here
-
 
 def findMedian(arr):
   # keep two heaps
@@ -32,11 +28,9 @@ def findMedian(arr):
     else:
         output.append((-top[0] + bottom[0]) // 2)
       
-    
   return output
 
-# These are the tests we use to determine if the solution is correct.
-# You can add your own at the bottom, but they are otherwise not editable!
+# Tests
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
