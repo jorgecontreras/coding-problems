@@ -38,9 +38,17 @@ edges = [
     [4,5],
     [6,2],
     [2,4],
-    [5,2]
+    [5,2],
+    [9,9],
+    [9,13],
+    [16,12],
+    [12,0]
 ]
 
 groups = find_connected(edges)
 
 print(groups)
+
+assert groups == [[1, 0, 8, 12, 16], [4, 5, 2, 6], [9, 13]]
+
+print("all tests passed.")

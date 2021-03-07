@@ -47,11 +47,10 @@ class Solution:
 
         return result
             
-
     def flatten(self, root):
         self.flatten_recursive(root)
 
-
+# tests
 n = Node(1)
 n.left = Node(2)
 n.right = Node(5)

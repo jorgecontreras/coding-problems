@@ -100,7 +100,6 @@ class WordSquares:
 
     # find the word squares for a given word list
     def squares(self, words):
-        self.words = words
         self.length = len(words[0])
 
         results = []
@@ -116,11 +115,17 @@ class WordSquares:
 # tests
 ws = WordSquares()
 
-word_list = ["ball", "area", "lady", "lead", "wall"]
-ws.initialize(word_list)
-squares = ws.squares(word_list)
+word_list_1 = ["ball", "area", "lady", "lead", "wall"]
+ws.initialize(word_list_1)
+squares_1 = ws.squares(word_list_1)
+
+word_list_2 = ["abat","baba","atan","atal"]
+ws.initialize(word_list_2)
+squares_2 = ws.squares(word_list_2)
 
 #tests
-assert squares == [['ball', 'area', 'lead', 'lady'], ['wall', 'area', 'lead', 'lady']]
+assert squares_1 == [['ball', 'area', 'lead', 'lady'], ['wall', 'area', 'lead', 'lady']]
+
+print(squares_2)
 
 print("all tests passed.")

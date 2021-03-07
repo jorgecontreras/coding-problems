@@ -34,25 +34,35 @@ class MedianOfStream:
             heappush(self.above, -heappop(self.below))
         
     def median(self):
-        if len(self.above) == 0:
-            return 0.0 
+        if len(self.above) > len(self.below):
+            return -self.above[0] 
 
         if len(self.above) == len(self.below):
             return (-self.above[0] + self.below[0]) / 2
 
         else:
-            return -self.above[0]
-
+            return self.below[0]
 
 # Tests
 
 ms = MedianOfStream()
 
-ms.insert(3)
-ms.insert(1)
+ms.insert(2)
 assert ms.median() == 2
-ms.insert(5)
-assert ms.median() == 3
+
 ms.insert(4)
+assert ms.median() == 3
+
+ms.insert(7)
+assert ms.median() == 4
+
+ms.insert(1)
+assert ms.median() == 3
+
+ms.insert(5)
+assert ms.median() == 4
+
+ms.insert(3)
 assert ms.median() == 3.5
 
+print("all tests passed.")

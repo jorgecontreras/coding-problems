@@ -39,13 +39,16 @@ def find_max_in_bitonic_array(nums):
     return nums[start]
 
 def main():
-  print(find_max_in_bitonic_array([1, 3, 8, 12, 4, 2]))
-  print(find_max_in_bitonic_array([3, 8, 3, 1]))
-  print(find_max_in_bitonic_array([1, 3, 8, 12]))
-  print(find_max_in_bitonic_array([10, 9, 8]))
-  print(find_max_in_bitonic_array([2, 23]))
-  print(find_max_in_bitonic_array([0]))
-  print(find_max_in_bitonic_array([-2, 0, 3, 5, 3, -1]))
+  assert find_max_in_bitonic_array([3, 4, 5, 1]) == 5
+  assert find_max_in_bitonic_array([1, 3, 8, 12, 4, 2]) == 12
+  assert find_max_in_bitonic_array([3, 8, 3, 1]) == 8
+  assert find_max_in_bitonic_array([1, 3, 8, 12]) == 12
+  assert find_max_in_bitonic_array([10, 9, 8]) == 10
+  assert find_max_in_bitonic_array([2, 23]) == 23
+  assert find_max_in_bitonic_array([0]) == 0
+  assert find_max_in_bitonic_array([-2, 0, 3, 5, 3, -1]) == 5
+
+  print("all tests passed.")
 
 
 main()

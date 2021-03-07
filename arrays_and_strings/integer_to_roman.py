@@ -1,8 +1,7 @@
 # INTEGER TO ROMAN
 
 def integer_to_roman(num):
-    output = ""
-
+    
     thousands = ["", "M", "MM", "MMM"]
     hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
     tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
