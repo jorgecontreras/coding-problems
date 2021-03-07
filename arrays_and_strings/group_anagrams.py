@@ -20,6 +20,9 @@ def group_anagrams(words):
     for word in words:
         ans[tuple(sorted(word))].append(word)
     
-    return ans.values()
+    return ans
 
-print(group_anagrams(["cab","tin","pew","duh","may","ill","buy","bar","max","doc"]))
+groups = group_anagrams(["cab","cod","tin","pew","duh","may","ill","buy","int","bar","max","doc", "nit", "same", "mase", "ames"])
+
+for tag, group in groups.items():
+    print(str(tag) + ": " + str(group))
