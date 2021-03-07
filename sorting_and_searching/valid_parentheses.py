@@ -1,5 +1,5 @@
 """
-VALID PARENTHESIS - BALANCED BRACKETS
+VALID PARENTHESES - BALANCED BRACKETS
 
 A bracket is considered to be any one of the following characters: (, ), {, }, [, or ].
 We consider two brackets to be matching if the first element is an open-bracket, e.g., (, {, or [, and the second bracket is a close-bracket of the same type, e.g., ( and ), [ and ], and { and } are the only pairs of matching brackets.
