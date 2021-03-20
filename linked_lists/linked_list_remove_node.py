@@ -54,7 +54,28 @@ class LinkedList:
             self.head = node.next
 
         node = None 
+
+    def remove_node_from_end(self, k):
+        left = right = head
+
+        #advance right pointer k elements apart
+        while k > 0:
+            right = right.next
+            k -= 1
+
+        # advance both pointers simultaneously until right node reached the end
+        while right:
+            right = right.next
+            left = left.next
+
+        # left node points to the kth - 1 node
+        if right is None:
+            head = head.next
+
+        else:
+            left.next = left.next.next
         
+        return head
 # test
 # create linked list
 
