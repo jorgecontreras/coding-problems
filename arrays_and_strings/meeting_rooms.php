@@ -1,7 +1,7 @@
 <?php
 
 // Meeting rooms
-echo "[ Meeting rooms ] \n";
+echo "[  Meeting rooms  ] \n";
 
 class Meeting 
 {
