@@ -6,7 +6,6 @@ group anagrams
 
 class Solution 
 {
-
     public function group_anagrams($words) {
         $groups = array();
 
@@ -24,15 +23,12 @@ class Solution
         return $groups;
 
     }
-
 }
-
 
 $words = ["cab","cod","tin","pew","duh","may","ill","buy","int","bar","max","doc", "nit", "same", "mase", "ames"];
 
 $s = new Solution();
 $anagrams = $s->group_anagrams($words);
-
 
 foreach ($anagrams as $key => $words) {
     echo $key . ": [";
