@@ -1,14 +1,14 @@
+
+# TREE INCLUDES
+"""
+Write a function, tree_includes, that takes in the root of a binary tree and a target value. 
+The function should return a boolean indicating whether or not the value is contained in the tree.
+"""
 class Node:
    def __init__(self, val):
      self.val = val
      self.left = None
      self.right = None
-
-
-# TREE INCLUDES
-"""
-Write a function, tree_includes, that takes in the root of a binary tree and a target value. The function should return a boolean indicating whether or not the value is contained in the tree.
-"""
 
 def tree_includes(root, target):
     return dfs(root, target)
