@@ -6,8 +6,11 @@ The function should return the length of the longest subsequence of strictly inc
 A subsequence of a list can be created by deleting any items of the list, while maintaining the relative order of items.
 """
 # dynamic programming YES
-# exhaustive recursion?
-# two pointers?
+# exhaustive recursion? NO
+# two pointers? NO
+
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def max_increasing_subseq(nums):
     start = 0
     previous = float("-inf")
@@ -31,8 +34,6 @@ def _max_increasing(nums, i, prev, dp):
 
     dp[key] = max(include, exclude)
     return dp[key]
-
-
 
 # tests
 t1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
