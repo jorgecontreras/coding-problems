@@ -12,10 +12,9 @@ def fib(n, dp={}):
         return dp[n]
 
     if n <= 2:
-        dp[n] = 1
         return 1
 
-    dp[n] = fib(n-2) + fib(n-1)
+    dp[n] = fib(n-2, dp) + fib(n-1, dp)
     return dp[n]
 
 assert fib(5) == 5
