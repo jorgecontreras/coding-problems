@@ -9,6 +9,9 @@ If the tree is empty, return -1.
 """
 from collections import deque
 
+# Time: O(n)
+# Space: O(n)
+
 class Node:
    def __init__(self, val):
      self.val = val
