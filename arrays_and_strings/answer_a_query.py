@@ -43,3 +43,8 @@ A = [3, 4, 2]
 output = [[1, 2], [1, 3], [2, 2]]
 The above-average subarrays are [3, 4], [3, 4, 2], and [4].
 """
+
+def aboveAverageSubarrays():
+    pass
+    
+
